@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ThreeSum {
+public class LC0015ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         int n = nums.length;
         Arrays.sort(nums);

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ValidParentheses{
+public class LC0020ValidParentheses {
 
     private static final HashMap<Character,Character> map = new HashMap<Character,Character>(){{
         put('{','}'); put('[',']'); put('(',')'); put('?','?');

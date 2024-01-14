@@ -1,8 +1,8 @@
-package VO;
+// package VO;
 
 import java.util.*;
 
-public class GenerateParentheses {
+public class LC0022GenerateParentheses {
 
     public List<String> generateParenthesis(int n) {
         List<String> ans = new ArrayList<String>();

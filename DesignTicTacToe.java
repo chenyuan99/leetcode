@@ -7,7 +7,7 @@ public class DesignTicTacToe {
     int[][] diagonals;
 
     /** Initialize your data structure here. */
-    public TicTacToe(int n) {
+    public DesignTicTacToe(int n) {
         this.n = n;
         rows = new int[3][n]; // 3 表示 player1 和 player2，索引 0 是无用的
         columns = new int[3][n];

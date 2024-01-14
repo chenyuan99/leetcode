@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.*;
 
 public class LC0212WordSearchII {
 
@@ -39,29 +39,31 @@ public class LC0212WordSearchII {
         }
         board[i1][j1] = ch;
     }
-}
 
-class Trie {
-    String word;
-    Map<Character, Trie> children;
-    boolean isWord;
 
-    public Trie() {
-        this.word = "";
-        this.children = new HashMap<Character, Trie>();
-    }
+    class Trie {
+        String word;
+        Map<Character, Trie> children;
+        boolean isWord;
 
-    public void insert(String word) {
-        Trie cur = this;
-        for (int i = 0; i < word.length(); ++i) {
-            char c = word.charAt(i);
-            if (!cur.children.containsKey(c)) {
-                cur.children.put(c, new Trie());
-            }
-            cur = cur.children.get(c);
+        public Trie() {
+            this.word = "";
+            this.children = new HashMap<Character, Trie>();
         }
-        cur.word = word;
+
+        public void insert(String word) {
+            Trie cur = this;
+            for (int i = 0; i < word.length(); ++i) {
+                char c = word.charAt(i);
+                if (!cur.children.containsKey(c)) {
+                    cur.children.put(c, new Trie());
+                }
+                cur = cur.children.get(c);
+            }
+            cur.word = word;
+        }
     }
+
 }
 
 // 作者：LeetCode-Solution

@@ -1,71 +1,40 @@
+import java.util.HashMap;
+
 public class LC0013RomanToInteger {
 
-    public String intToRoman(int num) {
-        int m = num / 1000;
-        int d = (num % 1000) / 500;
-        int c = (num % 500) / 100;
-        int l = (num % 100) / 50;
-        int x = (num % 50) / 10;
-        int v = (num % 10) / 5;
-        int i = (num % 5) / 1;
-        String answer = "";
-        for (int j = 0; j < m; j++) {
-            answer = answer + "M";
+    class Solution {
+        public int romanToInt(String s) {
+            HashMap<String, Integer> dict = new HashMap<String, Integer>();
+            dict.put("I", 1);
+            dict.put("V", 5);
+            dict.put("X", 10);
+            dict.put("L", 50);
+            dict.put("C", 100);
+            dict.put("D", 500);
+            dict.put("M", 1000);
+            dict.put("IV", 4);
+            dict.put("IX", 9);
+            dict.put("XL", 40);
+            dict.put("XC", 90);
+            dict.put("CD", 400);
+            dict.put("CM", 900);
+            if (s.length() == 1) {
+                return dict.get(s);
+            }
+            int temp = 0;
+            int i = 0;
+            while (i < s.length()) {
+                if (i < s.length() - 1 && dict.get(s.substring(i, i + 2)) != null) {
+                    temp = temp + dict.get(s.substring(i, i + 2));
+                    i = i + 2;
+                } else {
+                    temp = temp + dict.get(s.substring(i, i + 1));
+                    i = i + 1;
+                }
+            }
+
+            return temp;
         }
 
-
-        if ((num % 1000) / 100 == 9) {
-            answer = answer + "CM";
-        } else {
-            for (int j = 0; j < d; j++) {
-                answer = answer + "D";
-            }
-        }
-        if (c == 4) {
-            if ((num % 1000) / 100 == 4) {
-                answer = answer + "CD";
-            }
-        } else {
-            for (int j = 0; j < c; j++) {
-                answer = answer + "C";
-            }
-        }
-
-
-        if ((num % 100) / 10 == 9) {
-            answer = answer + "XC";
-        } else {
-            for (int j = 0; j < l; j++) {
-                answer = answer + "L";
-            }
-        }
-        if (x == 4) {
-            if ((num % 100) / 10 == 4) {
-                answer = answer + "XL";
-            }
-        } else {
-            for (int j = 0; j < x; j++) {
-                answer = answer + "X";
-            }
-        }
-
-
-        if (num % 10 == 9) {
-            answer = answer + "IX";
-        } else {
-            for (int j = 0; j < v; j++) {
-                answer = answer + "V";
-            }
-        }
-        if (i == 4) {
-            if (num % 10 == 4) {
-                answer = answer + "IV";
-            }
-        } else {
-            for (int j = 0; j < i; j++) {
-                answer = answer + "I";
-            }
-        }
-        return answer;
     }
 }
