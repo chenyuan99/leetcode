@@ -1,3 +1,8 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.Set;
+
 class SnakeGame {
 
     private int width, height, foodId, score;
