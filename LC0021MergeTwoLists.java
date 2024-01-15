@@ -1,5 +1,4 @@
-import java.util.*;
-public class MergeTwoLists {
+public class LC0021MergeTwoLists {
     public class ListNode {
         int val;
         ListNode next;
