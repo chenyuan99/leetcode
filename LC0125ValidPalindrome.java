@@ -1,4 +1,4 @@
-public class LC125ValidPalindrome {
+public class LC0125ValidPalindrome {
 
     public boolean isPalindrome(String s) {
         StringBuffer sgood = new StringBuffer();
@@ -11,7 +11,6 @@ public class LC125ValidPalindrome {
         }
         StringBuffer sgood_rev = new StringBuffer(sgood).reverse();
         return sgood.toString().equals(sgood_rev.toString());
-        
     }
     
 }

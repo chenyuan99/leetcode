@@ -1,14 +1,21 @@
 // package VO;
+
 import java.util.HashMap;
 
-public class LRUCache {
+public class LC0146LRUCache {
     class DLinkedNode {
         int key;
         int value;
         DLinkedNode prev;
         DLinkedNode next;
-        public DLinkedNode() {}
-        public DLinkedNode(int _key, int _value) {key = _key; value = _value;}
+
+        public DLinkedNode() {
+        }
+
+        public DLinkedNode(int _key, int _value) {
+            key = _key;
+            value = _value;
+        }
     }
 
     private HashMap<Integer, DLinkedNode> cache = new HashMap<Integer, DLinkedNode>();
@@ -16,7 +23,7 @@ public class LRUCache {
     private int capacity;
     private DLinkedNode head, tail;
 
-    public LRUCache(int capacity) {
+    public LC0146LRUCache(int capacity) {
         this.size = 0;
         this.capacity = capacity;
         head = new DLinkedNode();
@@ -51,8 +58,7 @@ public class LRUCache {
                 cache.remove(tail.key);
                 --size;
             }
-        }
-        else {
+        } else {
             // 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
             node.value = value;
             moveToHead(node);

@@ -2,7 +2,7 @@
 // hard
 import java.util.*;
 
-public class LC127WordLadder {
+public class LC0127WordLadder {
     Map<String, Integer> wordId = new HashMap<String, Integer>();
     List<List<Integer>> edge = new ArrayList<List<Integer>>();
     int nodeNum = 0;

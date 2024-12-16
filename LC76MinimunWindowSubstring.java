@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class LC76MinimunWindowSubstring {
@@ -37,7 +38,7 @@ public class LC76MinimunWindowSubstring {
         }
     
         public boolean check() {
-            Iterator iter = ori.entrySet().iterator(); 
+            Iterator iter = ori.entrySet().iterator();
             while (iter.hasNext()) { 
                 Map.Entry entry = (Map.Entry) iter.next(); 
                 Character key = (Character) entry.getKey(); 

@@ -2,7 +2,7 @@
 
 import java.util.Arrays;
 
-class CoinChange {
+public class LC0322CoinChange {
     public static int coinChange(int[] coins, int amount) {
         Arrays.sort(coins);
         int[] minCoins = new int[amount + 1];
@@ -15,3 +15,5 @@ class CoinChange {
         return minCoins[amount] == amount + 1 ? -1 : minCoins[amount];
     }
 }
+
+//https://leetcode.com/problems/coin-change/description/

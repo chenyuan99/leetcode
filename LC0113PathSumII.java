@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class PathSumII {
+public class LC0113PathSumII {
     // Definition for a binary tree node.
     public static class TreeNode {
         int val;
